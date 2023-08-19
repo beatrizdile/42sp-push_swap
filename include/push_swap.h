@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/19 17:38:48 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/19 19:03:23 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int						ft_listsize(t_stack_a *lst);
 // Sort
 void					sorting(t_stacks *stacks);
 void					sort_three(t_stacks *stacks);
+void					identify_sequence(t_stacks *stacks);
 
 // Moves
 void					ft_swap(t_stacks *stacks, char ch);
