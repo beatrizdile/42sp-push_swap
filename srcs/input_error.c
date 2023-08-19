@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:19:18 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/19 16:37:38 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/19 19:50:31 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	check_integers(int argc, char **argv)
 		{
 			if (!ft_isdigit(argv[i][j]))
 			{
-				if (j == 0 && (argv[i][j] == '-' || argv[i][j] == '+'))
+				if (j == 0 && ft_strlen(argv[i]) != 1 && \
+					(argv[i][j] == '-' || argv[i][j] == '+'))
 				{
 					j++;
 					continue ;
