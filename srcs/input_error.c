@@ -6,20 +6,18 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:19:18 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/18 23:03:22 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/19 16:37:38 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	input_error(int argc, char **argv)
+void	input_error(int argc, char **argv)
 {
 	if (argc == 1)
 		exit(0);
 	check_integers(argc, argv);
 	check_int_size(argc, argv);
-
-	return (0);
 }
 
 void	check_integers(int argc, char **argv)
@@ -69,8 +67,8 @@ void	check_for_doubles(t_stack_a *head_a)
 {
 	t_stack_a	*tmp;
 	t_stack_a	*ptr;
-	int		i;
-	int		num;
+	int			i;
+	int			num;
 
 	i = 0;
 	ptr = head_a;

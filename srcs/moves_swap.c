@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   moves_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 17:23:08 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/18 16:00:17 by bedos-sa         ###   ########.fr       */
+/*   Created: 2023/08/19 16:35:04 by bedos-sa          #+#    #+#             */
+/*   Updated: 2023/08/19 17:13:45 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	ft_swap(t_stacks *stacks, char ch)
 	}
 	else
 	{
-		if (head_a == NULL || head_a->next == NULL || head_b == NULL || head_b->next == NULL)
+		if (head_a == NULL || head_a->next == NULL || head_b == NULL
+			|| head_b->next == NULL)
 			return ;
 		ft_swap_a(head_a);
 		ft_swap_b(head_b);

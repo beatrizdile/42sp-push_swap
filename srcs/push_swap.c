@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:25:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/18 20:15:38 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/19 17:13:39 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	main(int argc, char **argv)
 // The program must display the smallest list of instructions possible to sort the stack
 // a, the smallest number being at the top.
 
-// If no parameters are specified, the program must not display anything and give the
+// If no parameters are specified,
+//	the program must not display anything and give the
 // prompt back.

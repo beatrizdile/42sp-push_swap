@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/18 23:06:51 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/19 17:38:48 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct t_stacks
 }						t_stacks;
 
 // Error Checks
-int						input_error(int argc, char **argv);
+void					input_error(int argc, char **argv);
 void					check_integers(int argc, char **argv);
 void					check_int_size(int argc, char **argv);
 void					check_for_doubles(t_stack_a *head_a);
@@ -60,5 +60,8 @@ void					ft_swap_b(t_stack_b *head_b);
 // Print
 void					print_linked_lists(t_stacks *stacks);
 void					print_error_and_exit(void);
+
+// Lists Checks
+int						check_list_order(t_stacks *stacks);
 
 #endif
