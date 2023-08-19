@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:19:18 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/17 17:31:54 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/18 23:03:22 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 int	input_error(int argc, char **argv)
 {
 	if (argc == 1)
-	{
-		ft_printf("Error: missing argument.\n");
 		exit(0);
-	}
 	check_integers(argc, argv);
 	check_int_size(argc, argv);
 
@@ -31,10 +28,11 @@ void	check_integers(int argc, char **argv)
 	int	j;
 
 	i = 1;
-	j = 0;
 	while (i < argc)
 	{
 		j = 0;
+		if (argv[i][j] == '\0')
+			print_error_and_exit();
 		while (j < (int)ft_strlen(argv[i]))
 		{
 			if (!ft_isdigit(argv[i][j]))
@@ -44,8 +42,7 @@ void	check_integers(int argc, char **argv)
 					j++;
 					continue ;
 				}
-				ft_printf("Error: some arguments aren't integers.\n");
-				exit(0);
+				print_error_and_exit();
 			}
 			j++;
 		}
@@ -63,10 +60,7 @@ void	check_int_size(int argc, char **argv)
 	{
 		num = ft_atol(argv[i]);
 		if (num > INTMAX || num < INTMIN)
-		{
-			ft_printf("Error: some arguments are bigger than an integer.\n");
-			exit(0);
-		}
+			print_error_and_exit();
 		i++;
 	}
 }
@@ -89,7 +83,7 @@ void	check_for_doubles(t_stack_a *head_a)
 		{
 			if (num == tmp->content)
 			{
-				ft_printf("Error: some arguments are duplicates.\n");
+				ft_printf("Error\n");
 				ft_clearnodes(&head_a);
 				exit(0);
 			}
@@ -97,4 +91,10 @@ void	check_for_doubles(t_stack_a *head_a)
 		}
 		ptr = ptr->next;
 	}
+}
+
+void	print_error_and_exit(void)
+{
+	ft_printf("Error\n");
+	exit(0);
 }
