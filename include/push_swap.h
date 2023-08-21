@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/21 14:47:42 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/21 16:09:41 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ void					ft_swap_b(t_stack_b *head_b);
 // Moves Rotate
 void					ft_rotate(t_stacks *stacks, char ch);
 void					ft_rotate_a(t_stacks *stacks, t_stack_a *head_a);
+
+// Moves Rev Rotate
+void					ft_rev_rotate(t_stacks *stacks, char ch);
+void					ft_rev_rotate_a(t_stacks *stacks, t_stack_a *head_a);
 
 // Print
 void					print_linked_lists(t_stacks *stacks);
