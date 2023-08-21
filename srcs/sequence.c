@@ -14,12 +14,12 @@
 
 static void identify_nums(t_stacks *stacks, int num1, int num2, int num3)
 {
-	ft_printf("antes:\n");
-	ft_printf("num1: %d\n", num1);
-	ft_printf("num2: %d\n", num2);
-	ft_printf("num3: %d\n", num3);
 	if (num1 > num2 && num1 < num3 && num2 < num3)
 		ft_swap(stacks, 'a');
+	else if (num1 > num2 && num1 > num3 && num2 < num3)
+		ft_rotate(stacks, 'a');
+	// else if (num1 < num2 && num1 > num3 && num2 > num3)
+		// ft_rev_rotate(stacks, 'a');
 }
 
 void	identify_sequence(t_stacks *stacks)

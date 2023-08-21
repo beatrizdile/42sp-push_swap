@@ -6,7 +6,7 @@
 #    By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 10:33:46 by bedos-sa          #+#    #+#              #
-#    Updated: 2023/08/19 18:49:53 by bedos-sa         ###   ########.fr        #
+#    Updated: 2023/08/21 13:38:07 by bedos-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ FILES = srcs/push_swap.c \
 		srcs/sorting.c \
 		srcs/moves_swap.c \
 		srcs/check_list.c \
-		srcs/sequence.c
+		srcs/sequence.c \
+		srcs/moves_rotate.c
 OBJS = $(FILES:.c=.o)
 green = \033[32m
 reset = \033[0m

@@ -22,6 +22,7 @@ void	sorting(t_stacks *stacks)
 
 void	sort_three(t_stacks *stacks)
 {
+	print_linked_lists(stacks);
 	identify_sequence(stacks);
 	print_linked_lists(stacks);
 }
