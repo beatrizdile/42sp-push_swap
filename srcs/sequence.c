@@ -20,6 +20,16 @@ static void identify_nums(t_stacks *stacks, int num1, int num2, int num3)
 		ft_rotate(stacks, 'a');
 	else if (num1 < num2 && num1 > num3 && num2 > num3)
 		ft_rev_rotate(stacks, 'a');
+	else if (num1 > num2 && num1 > num3 && num2 > num3)
+	{
+		ft_swap(stacks, 'a');
+		ft_rev_rotate(stacks, 'a');
+	}
+	else if (num1 < num2 && num1 < num3 && num2 > num3)
+	{
+		ft_swap(stacks, 'a');
+		ft_rotate(stacks, 'a');
+	}
 }
 
 void	identify_sequence(t_stacks *stacks)
