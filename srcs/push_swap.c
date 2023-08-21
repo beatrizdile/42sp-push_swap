@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:25:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/19 17:13:39 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/21 19:46:05 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ int	main(int argc, char **argv)
 
 // If no parameters are specified,
 //	the program must not display anything and give the
-// prompt back.
