@@ -21,7 +21,9 @@ void	sorting(t_stacks *stacks)
 	print_linked_lists(stacks);
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
-	ft_push(stacks, 'b');
+	print_linked_lists(stacks);
+	ft_push(stacks, 'a');
+	ft_push(stacks, 'a');
 	print_linked_lists(stacks);
 }
 
@@ -42,7 +44,7 @@ void	print_linked_lists(t_stacks *stacks)
 	count = 0;
 	while (head_a != NULL)
 	{
-		ft_printf("content[%d] of stack a: %d\n", count, head_a->content);
+		ft_printf("content[%d] of stack A: %d\n", count, head_a->content);
 		head_a = head_a->next;
 		count++;
 	}
@@ -50,9 +52,8 @@ void	print_linked_lists(t_stacks *stacks)
 	count = 0;
 	while (head_b != NULL)
 	{
-		ft_printf("content[%d] of stack b: %d\n", count, head_b->content);
+		ft_printf("content[%d] of stack B: %d\n", count, head_b->content);
 		head_b = head_b->next;
 		count++;
 	}
-	ft_printf("\n");
 }
