@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/22 12:27:19 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:42:58 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,16 @@ void					check_integers(int argc, char **argv);
 void					check_int_size(int argc, char **argv);
 void					check_for_doubles(t_stack_a *head_a);
 
-// Linked List
+// Linked List A
 t_stack_a				*create_list_a(int argc, char **argv);
-t_stack_a				*ft_newnode(int content);
-void					ft_clearnodes(t_stack_a **lst);
+t_stack_a				*ft_newnode_a(int content);
+void					ft_clearnodes_a(t_stack_a **lst);
 int						ft_listsize_a(t_stack_a *lst);
+
+// Linked List B
+t_stack_b				*create_list_b(int argc, char **argv);
+t_stack_b				*ft_newnode_b(int content);
+void					ft_clearnodes_b(t_stack_b **lst);
 int						ft_listsize_b(t_stack_b *head);
 
 // Sort

@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:19:18 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/19 19:50:31 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:36:53 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	check_for_doubles(t_stack_a *head_a)
 			if (num == tmp->content)
 			{
 				ft_printf("Error\n");
-				ft_clearnodes(&head_a);
+				ft_clearnodes_a(&head_a);
 				exit(0);
 			}
 			tmp = tmp->next;

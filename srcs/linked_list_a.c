@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linked_list.c                                      :+:      :+:    :+:   */
+/*   linked_list_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:57:07 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/22 12:26:57 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:39:06 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ t_stack_a	*create_list_a(int argc, char **argv)
 	t_stack_a	*tmp;
 
 	i = 1;
-	head_a = ft_newnode(ft_atoi(argv[i]));
+	head_a = ft_newnode_a(ft_atoi(argv[i]));
 	tmp = head_a;
 	while (++i < argc)
 	{
-		tmp->next = ft_newnode(ft_atoi(argv[i]));
+		tmp->next = ft_newnode_a(ft_atoi(argv[i]));
 		tmp = tmp->next;
 		tmp->next = NULL;
 	}
 	return (head_a);
 }
 
-t_stack_a	*ft_newnode(int content)
+t_stack_a	*ft_newnode_a(int content)
 {
 	t_stack_a	*ptr;
 
@@ -42,7 +42,7 @@ t_stack_a	*ft_newnode(int content)
 	return (ptr);
 }
 
-void	ft_clearnodes(t_stack_a **lst)
+void	ft_clearnodes_a(t_stack_a **lst)
 {
 	t_stack_a	*ptr;
 
@@ -66,17 +66,3 @@ int	ft_listsize_a(t_stack_a *head)
 	}
 	return (count);
 }
-
-int	ft_listsize_b(t_stack_b *head)
-{
-	int	count;
-
-	count = 0;
-	while (head != NULL)
-	{
-		count++;
-		head = head->next;
-	}
-	return (count);
-}
-

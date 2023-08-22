@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:25:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/22 12:16:07 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:36:53 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	stacks.head_b = NULL;
 	check_for_doubles(stacks.head_a);
 	sorting(&stacks);
-	ft_clearnodes(&stacks.head_a);
+	ft_clearnodes_a(&stacks.head_a);
 }
 
 // program named push_swap that takes as an argument the stack

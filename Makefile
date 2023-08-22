@@ -6,7 +6,7 @@
 #    By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 10:33:46 by bedos-sa          #+#    #+#              #
-#    Updated: 2023/08/21 16:24:03 by bedos-sa         ###   ########.fr        #
+#    Updated: 2023/08/22 12:40:37 by bedos-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ LIBS = /include
 RM = rm -f
 FILES = srcs/push_swap.c \
 		srcs/input_error.c \
-		srcs/linked_list.c \
+		srcs/linked_list_a.c \
+		srcs/linked_list_b.c \
 		srcs/sorting.c \
 		srcs/moves_swap.c \
 		srcs/check_list.c \
