@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:25:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/21 19:46:05 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:16:07 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 
 	input_error(argc, argv);
 	stacks.head_a = create_list_a(argc, argv);
+	stacks.head_b = NULL;
 	check_for_doubles(stacks.head_a);
 	sorting(&stacks);
 	ft_clearnodes(&stacks.head_a);
@@ -29,6 +30,3 @@ int	main(int argc, char **argv)
 
 // The program must display the smallest list of instructions possible to sort the stack
 // a, the smallest number being at the top.
-
-// If no parameters are specified,
-//	the program must not display anything and give the

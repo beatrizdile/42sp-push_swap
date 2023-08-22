@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:57:07 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/21 14:12:18 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:26:57 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_clearnodes(t_stack_a **lst)
 	}
 }
 
-int	ft_listsize(t_stack_a *head)
+int	ft_listsize_a(t_stack_a *head)
 {
 	int	count;
 
@@ -67,5 +67,16 @@ int	ft_listsize(t_stack_a *head)
 	return (count);
 }
 
+int	ft_listsize_b(t_stack_b *head)
+{
+	int	count;
 
+	count = 0;
+	while (head != NULL)
+	{
+		count++;
+		head = head->next;
+	}
+	return (count);
+}
 

@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:34:22 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/21 15:09:11 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:22:27 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_rotate(t_stacks *stacks, char ch)
 	{
 		if (head_b == NULL || head_b->next == NULL)
 			return ;
-		// ft_rotate_b(head_b);
+		ft_rotate_b(stacks, head_b);
 	}
 	else
 	{
@@ -33,7 +33,7 @@ void	ft_rotate(t_stacks *stacks, char ch)
 			|| head_b->next == NULL)
 			return ;
 		ft_rotate_a(stacks, stacks->head_a);
-		// ft_rotate_b(head_b);
+		ft_rotate_b(stacks, head_b);
 		ft_printf("rr\n");
 	}
 }
@@ -47,6 +47,20 @@ void	ft_rotate_a(t_stacks *stacks, t_stack_a *head_a)
 	while(head_a->next != NULL)
 		head_a = head_a->next;
 	head_a->next = tmp_head;
+	tmp_head->next = NULL;
+	
+	ft_printf("ra\n");
+}
+
+void	ft_rotate_b(t_stacks *stacks, t_stack_b *head_b)
+{
+	t_stack_b	*tmp_head;
+
+	tmp_head = head_b;
+	stacks->head_b = head_b->next;
+	while(head_b->next != NULL)
+		head_b = head_b->next;
+	head_b->next = tmp_head;
 	tmp_head->next = NULL;
 	
 	ft_printf("ra\n");

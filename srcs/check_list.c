@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:46:08 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/19 17:13:30 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:26:46 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_list_order(t_stacks *stacks)
 	i = 1;
 	head_a = stacks->head_a;
 	num = head_a->content;
-	while (i++ < ft_listsize(stacks->head_a))
+	while (i++ < ft_listsize_a(stacks->head_a))
 	{
 		head_a = head_a->next;
 		if (num > head_a->content)

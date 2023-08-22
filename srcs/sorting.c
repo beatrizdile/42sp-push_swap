@@ -16,7 +16,7 @@ void	sorting(t_stacks *stacks)
 {
 	if (check_list_order(stacks))
 		return ;
-	if (ft_listsize(stacks->head_a) == 3)
+	if (ft_listsize_a(stacks->head_a) == 3)
 		sort_three(stacks);
 }
 
@@ -33,7 +33,7 @@ void	print_linked_lists(t_stacks *stacks)
 	t_stack_a	*head_a;
 
 	head_a = stacks->head_a;
-	//t_stack_b	*head_b = stacks->head_b;
+	t_stack_b	*head_b = stacks->head_b;
 	count = 0;
 	while (head_a != NULL)
 	{
@@ -41,11 +41,11 @@ void	print_linked_lists(t_stacks *stacks)
 		head_a = head_a->next;
 		count++;
 	}
-	// count = 0;
-	// while (head_b != NULL)
-	// {
-	// 	ft_printf("content[%d] of stack b: %d\n", count, head_b->content);
-	// 	head_b = head_b->next;
-	// 	count++;
-	// }
+	count = 0;
+	while (head_b != NULL)
+	{
+		ft_printf("content[%d] of stack b: %d\n", count, head_b->content);
+		head_b = head_b->next;
+		count++;
+	}
 }
