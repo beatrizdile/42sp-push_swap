@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:25:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/22 12:36:53 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/22 14:51:40 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 	check_for_doubles(stacks.head_a);
 	sorting(&stacks);
 	ft_clearnodes_a(&stacks.head_a);
+	ft_clearnodes_b(&stacks.head_b);
 }
 
 // program named push_swap that takes as an argument the stack
@@ -30,3 +31,5 @@ int	main(int argc, char **argv)
 
 // The program must display the smallest list of instructions possible to sort the stack
 // a, the smallest number being at the top.
+
+// ./push_swap 5 2 7 1 6 3 9 4 8

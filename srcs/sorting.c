@@ -18,6 +18,11 @@ void	sorting(t_stacks *stacks)
 		return ;
 	if (ft_listsize_a(stacks->head_a) == 3)
 		sort_three(stacks);
+	print_linked_lists(stacks);
+	ft_push(stacks, 'b');
+	ft_push(stacks, 'b');
+	ft_push(stacks, 'b');
+	print_linked_lists(stacks);
 }
 
 void	sort_three(t_stacks *stacks)
@@ -41,6 +46,7 @@ void	print_linked_lists(t_stacks *stacks)
 		head_a = head_a->next;
 		count++;
 	}
+	ft_printf("\n");
 	count = 0;
 	while (head_b != NULL)
 	{
@@ -48,4 +54,5 @@ void	print_linked_lists(t_stacks *stacks)
 		head_b = head_b->next;
 		count++;
 	}
+	ft_printf("\n");
 }
