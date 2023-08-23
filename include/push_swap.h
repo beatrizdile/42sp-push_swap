@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/23 14:26:34 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/23 17:15:24 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct t_stacks
 
 typedef struct t_values
 {
+	int					cost;
 	int					max_a;
 	int					min_a;
 	int					max_b;
@@ -63,10 +64,12 @@ t_stack_b	*ft_newnode_b(int content);
 void		ft_clearnodes_b(t_stack_b **lst);
 int			ft_listsize_b(t_stack_b *head);
 
+// Sort Three
+void		sort_three(t_stacks *stacks);
+void		identify_nums(t_stacks *stacks, int num1, int num2, int num3);
+
 // Sort
 void		sorting(t_stacks *stacks);
-void		sort_three(t_stacks *stacks);
-void		identify_sequence(t_stacks *stacks);
 
 // Moves Push
 void		ft_push(t_stacks *stacks, char ch);
@@ -97,6 +100,11 @@ void		move_cheapest(t_stacks *stacks);
 void		check_max(t_stacks *stacks);
 void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
 void		check_max_b(t_stacks *stacks, t_stack_b *head_b);
+
+// Check Min
+void		check_min(t_stacks *stacks);
+void		check_min_a(t_stacks *stacks, t_stack_a *head_a);
+void		check_min_b(t_stacks *stacks, t_stack_b *head_b);
 
 // Print
 void		print_linked_lists(t_stacks *stacks);

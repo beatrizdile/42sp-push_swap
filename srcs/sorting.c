@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                             :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 17:09:49 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/19 16:41:07 by bedos-sa         ###   ########.fr       */
+/*   Created: 2023/08/23 15:59:54 by bedos-sa          #+#    #+#             */
+/*   Updated: 2023/08/23 17:15:38 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	sorting(t_stacks *stacks)
 {
+
 	if (check_list_order(stacks))
 		return ;
 	if (ft_listsize_a(stacks->head_a) == 3)
@@ -22,15 +23,14 @@ void	sorting(t_stacks *stacks)
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
 	move_cheapest(stacks);
+	ft_printf("MAX A: %d\n", stacks->values->max_a);
+	ft_printf("MIN A: %d\n", stacks->values->min_a);
+	ft_printf("MAX B: %d\n", stacks->values->max_b);
+	ft_printf("MIN B: %d\n", stacks->values->min_b);
+	ft_printf("COST: %d\n", stacks->values->cost);
 	print_linked_lists(stacks);
 }
 
-void	sort_three(t_stacks *stacks)
-{
-	print_linked_lists(stacks);
-	identify_sequence(stacks);
-	print_linked_lists(stacks);
-}
 
 void	print_linked_lists(t_stacks *stacks)
 {

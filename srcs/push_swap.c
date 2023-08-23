@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:25:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/23 14:33:48 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/23 15:52:32 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,5 @@ int	main(int argc, char **argv)
 	ft_clearnodes_b(&stacks.head_b);
 	free(stacks.values);
 }
-
-// program named push_swap that takes as an argument the stack
-// a formatted as a list of integers. The first argument should be at the top of the
-// stack (be careful about the order).
-
-// The program must display the smallest list of instructions possible to sort the stack
-// a, the smallest number being at the top.
 
 // ./push_swap 5 2 7 1 6 3 9 4 8

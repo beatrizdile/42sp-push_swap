@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:43:07 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/23 14:51:37 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/23 17:06:06 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	check_max(t_stacks *stacks)
 {
-	t_values	*values;
-
-	values = ft_calloc(1, sizeof(t_values));
-	stacks->values = values;
 	check_max_a(stacks, stacks->head_a);
 	if (stacks->head_b != NULL)
 		check_max_b(stacks, stacks->head_b);
