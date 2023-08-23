@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/23 14:10:47 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:26:34 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void		move_cheapest(t_stacks *stacks);
 // Check Max
 void		check_max(t_stacks *stacks);
 void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
+void		check_max_b(t_stacks *stacks, t_stack_b *head_b);
 
 // Print
 void		print_linked_lists(t_stacks *stacks);

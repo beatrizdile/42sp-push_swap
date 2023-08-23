@@ -21,7 +21,6 @@ void	sorting(t_stacks *stacks)
 	print_linked_lists(stacks);
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
-	print_linked_lists(stacks);
 	move_cheapest(stacks);
 	print_linked_lists(stacks);
 }
@@ -55,4 +54,5 @@ void	print_linked_lists(t_stacks *stacks)
 		head_b = head_b->next;
 		count++;
 	}
+	ft_printf("\n");
 }
