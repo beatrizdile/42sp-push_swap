@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:25:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/22 14:51:40 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:19:08 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	sorting(&stacks);
 	ft_clearnodes_a(&stacks.head_a);
 	ft_clearnodes_b(&stacks.head_b);
+	free(stacks.values);
 }
 
 // program named push_swap that takes as an argument the stack

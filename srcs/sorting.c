@@ -22,8 +22,7 @@ void	sorting(t_stacks *stacks)
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
 	print_linked_lists(stacks);
-	ft_push(stacks, 'a');
-	ft_push(stacks, 'a');
+	move_cheapest(stacks);
 	print_linked_lists(stacks);
 }
 

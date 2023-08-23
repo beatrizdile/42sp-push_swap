@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/23 11:32:49 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:10:47 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,16 @@ typedef struct t_stacks
 {
 	struct t_stack_a	*head_a;
 	struct t_stack_b	*head_b;
+	struct t_values		*values;
 }						t_stacks;
+
+typedef struct t_values
+{
+	int					max_a;
+	int					min_a;
+	int					max_b;
+	int					min_b;
+}						t_values;
 
 // Error Checks
 void		input_error(int argc, char **argv);
@@ -81,11 +90,19 @@ void		ft_rev_rotate(t_stacks *stacks, char ch);
 void		ft_rev_rotate_a(t_stacks *stacks, t_stack_a *head_a, int print);
 void		ft_rev_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print);
 
+// Move Cheapest
+void		move_cheapest(t_stacks *stacks);
+
+// Check Max
+void		check_max(t_stacks *stacks);
+void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
+
 // Print
 void		print_linked_lists(t_stacks *stacks);
 void		print_error_and_exit(void);
 
 // Lists Checks
 int			check_list_order(t_stacks *stacks);
+void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
 
 #endif
