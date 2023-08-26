@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:46:08 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/22 12:26:46 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/26 12:48:14 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int	check_list_order(t_stacks *stacks)
 		num = head_a->content;
 	}
 	ft_printf("Sorted.\n");
-	return (1);
+	ft_clearnodes_a(&stacks->head_a);
+	exit(0);
 }

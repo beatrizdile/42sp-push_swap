@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/23 17:15:38 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/26 13:07:05 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,16 @@ void	sorting(t_stacks *stacks)
 	print_linked_lists(stacks);
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
+	ft_push(stacks, 'b');
+	ft_push(stacks, 'b');
+	ft_push(stacks, 'b');
+	ft_push(stacks, 'b');
+	ft_push(stacks, 'b');
 	move_cheapest(stacks);
 	ft_printf("MAX A: %d\n", stacks->values->max_a);
 	ft_printf("MIN A: %d\n", stacks->values->min_a);
 	ft_printf("MAX B: %d\n", stacks->values->max_b);
 	ft_printf("MIN B: %d\n", stacks->values->min_b);
-	ft_printf("COST: %d\n", stacks->values->cost);
 	print_linked_lists(stacks);
 }
 
