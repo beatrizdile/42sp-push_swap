@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/23 19:39:35 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/26 15:00:41 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,32 @@ typedef struct t_stacks
 	struct t_stack_a	*head_a;
 	struct t_stack_b	*head_b;
 	struct t_values		*values;
+	struct t_moves		*moves;
 }						t_stacks;
 
 typedef struct t_values
 {
-	int					cost;
 	int					max_a;
 	int					min_a;
 	int					max_b;
 	int					min_b;
 }						t_values;
+
+typedef struct t_moves
+{
+	int					cost;
+	int					sa;
+	int					sb;
+	int					ss;
+	int					pa;
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
+}						t_moves;
 
 // Error Checks
 void		input_error(int argc, char **argv);
@@ -100,7 +116,7 @@ void		new_max_min(t_stacks *stacks);
 
 // Find Cheapest
 void		new_max_min(t_stacks *stacks);
-int			get_max_top(t_stacks *stacks);
+void			get_max_top(t_stacks *stacks);
 
 // Check Max
 void		check_max(t_stacks *stacks);
@@ -119,5 +135,8 @@ void		print_error_and_exit(void);
 // Lists Checks
 int			check_list_order(t_stacks *stacks);
 void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
+
+// Free All
+void		free_for_all(t_stacks *stacks);
 
 #endif

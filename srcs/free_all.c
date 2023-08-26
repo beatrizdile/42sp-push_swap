@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 15:25:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/26 15:00:57 by bedos-sa         ###   ########.fr       */
+/*   Created: 2023/08/26 14:59:02 by bedos-sa          #+#    #+#             */
+/*   Updated: 2023/08/26 15:00:14 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	free_for_all(t_stacks *stacks)
 {
-	t_stacks	stacks;
-
-	input_error(argc, argv);
-	stacks.head_a = create_list_a(argc, argv);
-	stacks.head_b = NULL;
-	check_for_doubles(stacks.head_a);
-	sorting(&stacks);
-	free_for_all(&stacks);
+	ft_clearnodes_a(&stacks->head_a);
+	ft_clearnodes_b(&stacks->head_b);
+	free(stacks->values);
+	free(stacks->moves);
 }
-
-// ./push_swap 5 2 7 1 6 3 9 4 8
