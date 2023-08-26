@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/26 14:40:09 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/26 15:44:22 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,39 +36,30 @@ void	check_moves(t_stacks *stacks)
 	{
 		if (head_a->content > stacks->values->max_b || \
 			head_a->content < stacks->values->min_b)
-			new_max_min(stacks);
+			new_max_or_min_stack_b(stacks);
 		head_a = head_a->next;
 	}
 }
 
-void	new_max_min(t_stacks *stacks)
+void	new_max_or_min_stack_b(t_stacks *stacks)
 {
 	struct t_moves	*moves;
+
 	moves = ft_calloc(1, sizeof(t_moves));
 	stacks->moves = moves;
-	get_max_top(stacks);
-	ft_printf("rb: %d\n", stacks->moves->rb);
-	ft_printf("rrb: %d\n", stacks->moves->rrb);
+	move_max_stack_b(stacks);
+	ft_printf("rb: %d | rrb: %d\n", stacks->moves->rb, stacks->moves->rrb);
 }
 
-void	get_max_top(t_stacks *stacks)
+void	move_max_stack_b(t_stacks *stacks)
 {
 	int			i;
 	int			size;
-	t_stack_b	*head_b;
 
 	if (stacks->head_b->content == stacks->values->max_b)
 		return ;
-	i = 0;
-	head_b = stacks->head_b;
+	i = find_max_index_stack_b(stacks);
 	size = ft_listsize_b(stacks->head_b);
-	while (i < size)
-	{
-		if (head_b->content == stacks->values->max_b)
-			break;
-		head_b = head_b->next;
-		i++;
-	}
 	if (size % 2 == 0)
 	{
 		if (i+1 > size/2)
@@ -83,6 +74,25 @@ void	get_max_top(t_stacks *stacks)
 		else
 			stacks->moves->rb = i;
 	}
+}
+
+int	find_max_index_stack_b(t_stacks *stacks)
+{
+	t_stack_b	*head_b;
+	int			size;
+	int			i;
+
+	i = 0;
+	head_b = stacks->head_b;
+	size = ft_listsize_b(stacks->head_b);
+	while (i < size)
+	{
+		if (head_b->content == stacks->values->max_b)
+			break;
+		head_b = head_b->next;
+		i++;
+	}
+	return (i);
 }
 
 // primeiro check se o valor a ser passado de A para B é maior que o MAX de B ou
