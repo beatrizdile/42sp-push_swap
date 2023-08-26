@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/26 13:06:47 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/26 13:47:58 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	get_max_top(t_stacks *stacks)
 		ft_printf("saiuuu\n");
 		return (0);
 	}
-	i = 1;
+	i = 0;
 	head_b = stacks->head_b;
 	size = ft_listsize_b(stacks->head_b);
 	while (i < size)
@@ -69,14 +69,13 @@ int	get_max_top(t_stacks *stacks)
 	}
 	if (size % 2 == 0)
 	{
-		if (i > size/2)
-			ft_printf("em baixo | moves: %d\n", (size - i) + 1);
+		if (i+1 > size/2)
+			ft_printf("em baixo | moves: %d\n", (size - i));
 		else
-			ft_printf("em cima | moves: %d\n", (size - i) - 1);
+			ft_printf("em cima | moves: %d\n", i);
 	}
-	if (size % 2 != 0)
+	else if (size % 2 != 0)
 	{
-		i--;
 		if (i > size/2)
 			ft_printf("em baixo | moves: %d\n", (size - i));
 		else
