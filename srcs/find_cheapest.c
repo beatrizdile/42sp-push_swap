@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/26 15:44:22 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/28 13:29:37 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,16 @@ void	check_moves(t_stacks *stacks)
 	int	i;
 	int	size;
 	t_stack_a *head_a;
+	struct t_moves	*moves;
 
-	i = 0;
+	moves = ft_calloc(1, sizeof(t_moves));
+	stacks->moves = moves;
 	head_a = stacks->head_a;
 	size = ft_listsize_a(stacks->head_a);
+	i = 0;
 	while (i++ < size)
 	{
+		// get_to_top_stack_a();
 		if (head_a->content > stacks->values->max_b || \
 			head_a->content < stacks->values->min_b)
 			new_max_or_min_stack_b(stacks);
@@ -41,12 +45,14 @@ void	check_moves(t_stacks *stacks)
 	}
 }
 
+// void	get_to_top_stack_a(t_stacks stacks)
+// {
+	
+// }
+
+
 void	new_max_or_min_stack_b(t_stacks *stacks)
 {
-	struct t_moves	*moves;
-
-	moves = ft_calloc(1, sizeof(t_moves));
-	stacks->moves = moves;
 	move_max_stack_b(stacks);
 	ft_printf("rb: %d | rrb: %d\n", stacks->moves->rb, stacks->moves->rrb);
 }
@@ -104,4 +110,6 @@ int	find_max_index_stack_b(t_stacks *stacks)
 //		no topo da stack 
 //		+ quanto custa mover elemento para o topo da stack A + push
 // Se não, colocar em algum lugar na stack
-//		calcular quanto custa para colocar em algum lugar
+//		calcular quanto custa para colocar em algum lugar na stack B + para deixar
+//		no topo da stack A
+// Calcular quantos movimentos de rotação podem ser feitos em conjunto
