@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/28 13:29:37 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:27:14 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,47 @@ void	check_moves(t_stacks *stacks)
 	i = 0;
 	while (i++ < size)
 	{
-		// get_to_top_stack_a();
+		get_top_stack_a(stacks, head_a, i-1);
 		if (head_a->content > stacks->values->max_b || \
 			head_a->content < stacks->values->min_b)
 			new_max_or_min_stack_b(stacks);
+		ft_printf("pb: %d | ra: %d | rra: %d\n", stacks->moves->pb, stacks->moves->ra, stacks->moves->rra);
+		ft_printf("rb: %d | rrb: %d\n", stacks->moves->rb, stacks->moves->rrb);
+		ft_printf("----------------------------\n");
 		head_a = head_a->next;
 	}
 }
 
-// void	get_to_top_stack_a(t_stacks stacks)
-// {
-	
-// }
+void	get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i)
+{
+	int			size;
+
+	stacks->moves->pb = 1;
+	stacks->moves->ra = 0;
+	stacks->moves->rra = 0;
+	if (stacks->head_a->content == head_a->content)
+		return ;
+	size = ft_listsize_a(stacks->head_a);
+	if (size % 2 == 0)
+	{
+		if (i+1 > size/2)
+			stacks->moves->rra = (size - i);
+		else
+			stacks->moves->ra = i;
+	}
+	else
+	{
+		if (i > size/2)
+			stacks->moves->rra = (size - i);
+		else
+			stacks->moves->ra = i;
+	}
+}
 
 
 void	new_max_or_min_stack_b(t_stacks *stacks)
 {
 	move_max_stack_b(stacks);
-	ft_printf("rb: %d | rrb: %d\n", stacks->moves->rb, stacks->moves->rrb);
 }
 
 void	move_max_stack_b(t_stacks *stacks)
