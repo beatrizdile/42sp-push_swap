@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/29 11:28:59 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/29 13:42:34 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,34 @@ void	check_moves(t_stacks *stacks)
 			new_max_or_min_stack_b(stacks);
 		else
 			new_num_in_stack_b(stacks, head_a->content);
+		check_double_moves(stacks);
 		ft_printf("pb: %d | ra: %d | rra: %d\n", stacks->moves->pb, stacks->moves->ra, stacks->moves->rra);
 		ft_printf("rb: %d | rrb: %d\n", stacks->moves->rb, stacks->moves->rrb);
+		ft_printf("rr: %d | rrr: %d\n", stacks->moves->rr, stacks->moves->rrr);
 		ft_printf("----------------------------\n");
 		stacks->moves->rrb = 0;
 		stacks->moves->rb = 0;
 		stacks->moves->rrb = 0;
 		stacks->moves->rb = 0;
+		stacks->moves->rr = 0;
+		stacks->moves->rrr = 0;
 		head_a = head_a->next;
+	}
+}
+
+void	check_double_moves(t_stacks *stacks)
+{
+	while (stacks->moves->ra != 0 && stacks->moves->rb != 0)
+	{
+		stacks->moves->ra--;
+		stacks->moves->rb--;
+		stacks->moves->rr++;
+	}
+	while (stacks->moves->rra != 0 && stacks->moves->rrb != 0)
+	{
+		stacks->moves->rra--;
+		stacks->moves->rrb--;
+		stacks->moves->rrr++;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/29 11:23:23 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/29 13:41:26 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ int			find_index_stack_b(t_stacks *stacks, int nbr);
 void		get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i);
 void		new_num_in_stack_b(t_stacks *stacks, int num);
 int			search_num_stack_b(t_stacks *stacks, int nbr);
+void		check_double_moves(t_stacks *stacks);
 
 // Check Max
 void		check_max(t_stacks *stacks);
