@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/28 14:27:14 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/29 11:28:59 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,70 @@ void	check_moves(t_stacks *stacks)
 		if (head_a->content > stacks->values->max_b || \
 			head_a->content < stacks->values->min_b)
 			new_max_or_min_stack_b(stacks);
+		else
+			new_num_in_stack_b(stacks, head_a->content);
 		ft_printf("pb: %d | ra: %d | rra: %d\n", stacks->moves->pb, stacks->moves->ra, stacks->moves->rra);
 		ft_printf("rb: %d | rrb: %d\n", stacks->moves->rb, stacks->moves->rrb);
 		ft_printf("----------------------------\n");
+		stacks->moves->rrb = 0;
+		stacks->moves->rb = 0;
+		stacks->moves->rrb = 0;
+		stacks->moves->rb = 0;
 		head_a = head_a->next;
 	}
+}
+
+void	new_num_in_stack_b(t_stacks *stacks, int num)
+{
+	int	i;
+	int	size;
+	int	nbr;
+
+	nbr = search_num_stack_b(stacks, num);
+	if (stacks->head_b->content == nbr)
+		return ;
+	i = find_index_stack_b(stacks, nbr);
+	size = ft_listsize_b(stacks->head_b);
+	if (size % 2 == 0)
+	{
+		if (i+1 > size/2)
+			stacks->moves->rrb = (size - i);
+		else
+			stacks->moves->rb = i;
+	}
+	else
+	{
+		if (i > size/2)
+			stacks->moves->rrb = (size - i);
+		else
+			stacks->moves->rb = i;
+	}
+}
+
+int	search_num_stack_b(t_stacks *stacks, int nbr)
+{
+	t_stack_b	*head_b;
+	int			size;
+	int			flag;
+	int			i;
+
+	i = 0;
+	flag = 0;
+	head_b = stacks->head_b;
+	size = ft_listsize_b(stacks->head_b);
+	while (flag == 0)
+	{
+		i = 0;
+		nbr--;
+		head_b = stacks->head_b;
+		while (i++ < size)
+		{
+			if (head_b->content == nbr)
+				flag = 1;
+			head_b = head_b->next;
+		}
+	}
+	return (nbr);
 }
 
 void	get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i)
@@ -77,17 +136,12 @@ void	get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i)
 
 void	new_max_or_min_stack_b(t_stacks *stacks)
 {
-	move_max_stack_b(stacks);
-}
-
-void	move_max_stack_b(t_stacks *stacks)
-{
 	int			i;
 	int			size;
 
 	if (stacks->head_b->content == stacks->values->max_b)
 		return ;
-	i = find_max_index_stack_b(stacks);
+	i = find_index_stack_b(stacks, stacks->values->max_b);
 	size = ft_listsize_b(stacks->head_b);
 	if (size % 2 == 0)
 	{
@@ -105,7 +159,7 @@ void	move_max_stack_b(t_stacks *stacks)
 	}
 }
 
-int	find_max_index_stack_b(t_stacks *stacks)
+int	find_index_stack_b(t_stacks *stacks, int nbr)
 {
 	t_stack_b	*head_b;
 	int			size;
@@ -116,7 +170,7 @@ int	find_max_index_stack_b(t_stacks *stacks)
 	size = ft_listsize_b(stacks->head_b);
 	while (i < size)
 	{
-		if (head_b->content == stacks->values->max_b)
+		if (head_b->content == nbr)
 			break;
 		head_b = head_b->next;
 		i++;
