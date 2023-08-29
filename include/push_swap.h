@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/29 13:41:26 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:23:55 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct t_stacks
 	struct t_stack_b	*head_b;
 	struct t_values		*values;
 	struct t_moves		*moves;
+	struct t_cheap		*cheap;
 }						t_stacks;
 
 typedef struct t_values
@@ -61,6 +62,22 @@ typedef struct t_moves
 	int					rrb;
 	int					rrr;
 }						t_moves;
+
+typedef struct t_cheap
+{
+	int					cost;
+	int					sa;
+	int					sb;
+	int					ss;
+	int					pa;
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
+}						t_cheap;
 
 // Error Checks
 void		input_error(int argc, char **argv);
@@ -121,15 +138,11 @@ void		get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i);
 void		new_num_in_stack_b(t_stacks *stacks, int num);
 int			search_num_stack_b(t_stacks *stacks, int nbr);
 void		check_double_moves(t_stacks *stacks);
+void		check_cost(t_stacks *stacks, int i);
 
-// Check Max
-void		check_max(t_stacks *stacks);
-void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
+// Check Max & Min
+void		check_max_min(t_stacks *stacks);
 void		check_max_b(t_stacks *stacks, t_stack_b *head_b);
-
-// Check Min
-void		check_min(t_stacks *stacks);
-void		check_min_a(t_stacks *stacks, t_stack_a *head_a);
 void		check_min_b(t_stacks *stacks, t_stack_b *head_b);
 
 // Print
@@ -138,7 +151,6 @@ void		print_error_and_exit(void);
 
 // Lists Checks
 int			check_list_order(t_stacks *stacks);
-void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
 
 // Free All
 void		free_for_all(t_stacks *stacks);

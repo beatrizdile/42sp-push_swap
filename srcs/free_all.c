@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/28 13:27:10 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/29 14:31:28 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ void	free_for_all(t_stacks *stacks)
 	ft_clearnodes_b(&stacks->head_b);
 	free(stacks->values);
 	free(stacks->moves);
+	free(stacks->cheap);
 }

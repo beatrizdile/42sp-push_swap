@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/29 13:42:34 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:19:55 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	move_cheapest(t_stacks *stacks)
 
 	values = ft_calloc(1, sizeof(t_values));
 	stacks->values = values;
-	check_max(stacks);
-	check_min(stacks);
+	check_max_min(stacks);
 	check_moves(stacks);
 }
 
@@ -29,9 +28,12 @@ void	check_moves(t_stacks *stacks)
 	int	size;
 	t_stack_a *head_a;
 	struct t_moves	*moves;
+	struct t_cheap	*cheap;
 
 	moves = ft_calloc(1, sizeof(t_moves));
 	stacks->moves = moves;
+	cheap = ft_calloc(1, sizeof(t_cheap));
+	stacks->cheap = cheap;
 	head_a = stacks->head_a;
 	size = ft_listsize_a(stacks->head_a);
 	i = 0;
@@ -44,18 +46,38 @@ void	check_moves(t_stacks *stacks)
 		else
 			new_num_in_stack_b(stacks, head_a->content);
 		check_double_moves(stacks);
+		check_cost(stacks, i);
 		ft_printf("pb: %d | ra: %d | rra: %d\n", stacks->moves->pb, stacks->moves->ra, stacks->moves->rra);
 		ft_printf("rb: %d | rrb: %d\n", stacks->moves->rb, stacks->moves->rrb);
 		ft_printf("rr: %d | rrr: %d\n", stacks->moves->rr, stacks->moves->rrr);
 		ft_printf("----------------------------\n");
-		stacks->moves->rrb = 0;
-		stacks->moves->rb = 0;
-		stacks->moves->rrb = 0;
-		stacks->moves->rb = 0;
-		stacks->moves->rr = 0;
-		stacks->moves->rrr = 0;
 		head_a = head_a->next;
 	}
+	ft_printf("----------------------------\n");
+	ft_printf("CHEAPEST: %d\n", stacks->cheap->cost);
+	ft_printf("pb: %d | ra: %d | rra: %d\n", stacks->cheap->pb, stacks->cheap->ra, stacks->cheap->rra);
+	ft_printf("rb: %d | rrb: %d\n", stacks->cheap->rb, stacks->cheap->rrb);
+	ft_printf("rr: %d | rrr: %d\n", stacks->cheap->rr, stacks->cheap->rrr);
+	ft_printf("----------------------------\n");
+}
+
+void	check_cost(t_stacks *stacks, int i)
+{
+	stacks->moves->cost = stacks->moves->pb + stacks->moves->ra + stacks->moves->rb + stacks->moves->rr + stacks->moves->rra + stacks->moves->rrb + stacks->moves->rrr;
+	ft_printf("COST: %d\n", stacks->moves->cost);
+	if (i == 1 || (stacks->cheap->cost > stacks->moves->cost))
+	{
+		stacks->cheap->cost = stacks->moves->cost;
+		stacks->cheap->pb = stacks->moves->pb;
+		stacks->cheap->ra = stacks->moves->ra;
+		stacks->cheap->rb = stacks->moves->rb;
+		stacks->cheap->rr = stacks->moves->rr;
+		stacks->cheap->rra = stacks->moves->rra;
+		stacks->cheap->rrb = stacks->moves->rrb;
+		stacks->cheap->rrr = stacks->moves->rrr;
+	}
+	ft_printf("CHEAPEST: %d\n", stacks->cheap->cost);
+	
 }
 
 void	check_double_moves(t_stacks *stacks)
@@ -132,8 +154,6 @@ void	get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i)
 	int			size;
 
 	stacks->moves->pb = 1;
-	stacks->moves->ra = 0;
-	stacks->moves->rra = 0;
 	if (stacks->head_a->content == head_a->content)
 		return ;
 	size = ft_listsize_a(stacks->head_a);
