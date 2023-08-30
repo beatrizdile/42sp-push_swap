@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/29 15:47:19 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:14:47 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,40 @@
 
 void	move_cheapest(t_stacks *stacks)
 {
-	t_values	*values;
+	struct t_moves	*moves;
+	struct t_cheap	*cheap;
+	t_values		*values;
 
+	moves = ft_calloc(1, sizeof(t_moves));
+	stacks->moves = moves;
+	cheap = ft_calloc(1, sizeof(t_cheap));
+	stacks->cheap = cheap;
 	values = ft_calloc(1, sizeof(t_values));
 	stacks->values = values;
-	check_max_min(stacks);
-	check_moves(stacks);
+	while (ft_listsize_a(stacks->head_a) != 3)
+	{
+		check_max_min(stacks);
+		check_moves(stacks);
+		do_cheap_moves(stacks);
+	}
+}
+
+void	do_cheap_moves(t_stacks *stacks)
+{
+	while (stacks->cheap->ra-- != 0)
+		ft_rotate(stacks, 'a');
+	while (stacks->cheap->rb-- != 0)
+		ft_rotate(stacks, 'b');
+	while (stacks->cheap->rr-- != 0)
+		ft_rotate(stacks, 'r');
+	while (stacks->cheap->rra-- != 0)
+		ft_rev_rotate(stacks, 'a');
+	while (stacks->cheap->rrb-- != 0)
+		ft_rev_rotate(stacks, 'b');
+	while (stacks->cheap->rrr-- != 0)
+		ft_rev_rotate(stacks, 'r');
+	while (stacks->cheap->pb-- != 0)
+		ft_push(stacks, 'b');
 }
 
 void	check_moves(t_stacks *stacks)
@@ -27,13 +55,7 @@ void	check_moves(t_stacks *stacks)
 	int	i;
 	int	size;
 	t_stack_a *head_a;
-	struct t_moves	*moves;
-	struct t_cheap	*cheap;
 
-	moves = ft_calloc(1, sizeof(t_moves));
-	stacks->moves = moves;
-	cheap = ft_calloc(1, sizeof(t_cheap));
-	stacks->cheap = cheap;
 	head_a = stacks->head_a;
 	size = ft_listsize_a(stacks->head_a);
 	i = 0;
@@ -47,24 +69,13 @@ void	check_moves(t_stacks *stacks)
 			new_num_in_stack_b(stacks, head_a->content);
 		check_double_moves(stacks);
 		check_cost(stacks, i);
-		ft_printf("pb: %d | ra: %d | rra: %d\n", stacks->moves->pb, stacks->moves->ra, stacks->moves->rra);
-		ft_printf("rb: %d | rrb: %d\n", stacks->moves->rb, stacks->moves->rrb);
-		ft_printf("rr: %d | rrr: %d\n", stacks->moves->rr, stacks->moves->rrr);
-		ft_printf("----------------------------\n");
 		head_a = head_a->next;
 	}
-	ft_printf("----------------------------\n");
-	ft_printf("CHEAPEST: %d\n", stacks->cheap->cost);
-	ft_printf("pb: %d | ra: %d | rra: %d\n", stacks->cheap->pb, stacks->cheap->ra, stacks->cheap->rra);
-	ft_printf("rb: %d | rrb: %d\n", stacks->cheap->rb, stacks->cheap->rrb);
-	ft_printf("rr: %d | rrr: %d\n", stacks->cheap->rr, stacks->cheap->rrr);
-	ft_printf("----------------------------\n");
 }
 
 void	check_cost(t_stacks *stacks, int i)
 {
 	stacks->moves->cost = stacks->moves->pb + stacks->moves->ra + stacks->moves->rb + stacks->moves->rr + stacks->moves->rra + stacks->moves->rrb + stacks->moves->rrr;
-	ft_printf("COST: %d\n", stacks->moves->cost);
 	if (i == 1 || (stacks->cheap->cost > stacks->moves->cost))
 	{
 		stacks->cheap->cost = stacks->moves->cost;
@@ -76,8 +87,6 @@ void	check_cost(t_stacks *stacks, int i)
 		stacks->cheap->rrb = stacks->moves->rrb;
 		stacks->cheap->rrr = stacks->moves->rrr;
 	}
-	ft_printf("CHEAPEST: %d\n", stacks->cheap->cost);
-	
 }
 
 void	check_double_moves(t_stacks *stacks)
@@ -225,16 +234,3 @@ int	find_index_stack_b(t_stacks *stacks, int nbr)
 	}
 	return (i);
 }
-
-// primeiro check se o valor a ser passado de A para B é maior que o MAX de B ou
-// menor que o MIN de B
-// Se sim, precisamos colocar ele acima do MAX de B
-//		o primeiro elemento é o MAX de B?
-//		se não,
-//		devemos calcular quantos movimentos são precisos para deixar o MAX de B
-//		no topo da stack 
-//		+ quanto custa mover elemento para o topo da stack A + push
-// Se não, colocar em algum lugar na stack
-//		calcular quanto custa para colocar em algum lugar na stack B + para deixar
-//		no topo da stack A
-// Calcular quantos movimentos de rotação podem ser feitos em conjunto

@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:40:17 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/22 15:41:09 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 11:17:42 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_push(t_stacks *stacks, char ch)
 		else
 			ft_push_a(stacks);
 	}
-	if (ch == 'b')
+	else if (ch == 'b')
 	{
 		if (head_b == NULL)
 			ft_push_empty_b(stacks);
