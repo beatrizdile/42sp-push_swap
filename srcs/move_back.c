@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 15:50:22 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:54:28 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,23 @@
 void	move_stack_a(t_stacks *stacks)
 {
 	t_stack_b	*head_b;
+	// int			size;
+	// int			i;
 	
+	// i = 0;
+	// size = ft_listsize_b(stacks->head_b);
 	head_b = stacks->head_b;
-	check_max_min_a(stacks);
-	if (head_b->content < stacks->values->min_a)
-		new_min_stack_a(stacks);
-	else if (head_b->content > stacks->values->max_a)
-		new_max_stack_a(stacks);
+	// while (i++ < size)
+	// {
+		check_max_min_a(stacks);
+		if (head_b->content < stacks->values->min_a)
+			new_min_stack_a(stacks);
+		else if (head_b->content > stacks->values->max_a)
+			new_max_stack_a(stacks);
+		else
+			new_elem_stack_a(stacks, head_b);
+		head_b = head_b->next;
+	// }
 }
 
 int	find_index_stack_a(t_stacks *stacks, int nbr)

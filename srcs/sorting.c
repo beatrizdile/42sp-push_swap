@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 15:48:27 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:22:48 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,6 @@ void	sorting(t_stacks *stacks)
 	print_linked_lists(stacks);
 	move_cheapest(stacks);
 	sort_three(stacks, 0);
-	ft_push(stacks, 'a');
-	
-	t_stack_a *head_a = stacks->head_a;
-	head_a->content = 80;
-	head_a = head_a->next;
-	head_a->content = 20;
-	head_a = head_a->next;
-	head_a->content = 6;
-	head_a = head_a->next;
-	head_a->content = 30;
-	head_a = head_a->next;
-
 	print_linked_lists(stacks);
 	move_stack_a(stacks);
 	print_linked_lists(stacks);
