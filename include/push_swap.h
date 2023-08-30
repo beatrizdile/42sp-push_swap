@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 14:26:32 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 15:41:41 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ t_stack_a	*create_list_a(int argc, char **argv);
 t_stack_a	*ft_newnode_a(int content);
 void		ft_clearnodes_a(t_stack_a **lst);
 int			ft_listsize_a(t_stack_a *lst);
+t_stack_a	*ft_lstlast_a(t_stack_a *head_a);
 
 // Linked List B
 t_stack_b	*create_list_b(int argc, char **argv);
@@ -145,8 +146,10 @@ void		check_cost(t_stacks *stacks, int i);
 // Move Back to Stack A
 void		move_stack_a(t_stacks *stacks);
 void		new_min_stack_a(t_stacks *stacks);
+void		new_max_stack_a(t_stacks *stacks);
 int			find_index_stack_a(t_stacks *stacks, int nbr);
-void		do_moves_stack_a(t_stacks *stacks);
+void		do_moves_min_stack_a(t_stacks *stacks);
+void		do_moves_max_stack_a(t_stacks *stacks);
 
 // Check Max & Min B
 void		check_max_min_b(t_stacks *stacks);

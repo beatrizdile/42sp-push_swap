@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:57:07 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/22 12:39:06 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 15:12:02 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,13 @@ int	ft_listsize_a(t_stack_a *head)
 		head = head->next;
 	}
 	return (count);
+}
+
+t_stack_a	*ft_lstlast_a(t_stack_a *head_a)
+{	
+	if (head_a == NULL)
+		return (NULL);
+	while (head_a->next != NULL)
+		head_a = head_a->next;
+	return (head_a);
 }
