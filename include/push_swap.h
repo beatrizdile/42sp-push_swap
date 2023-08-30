@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 16:18:20 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:11:08 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,12 +147,14 @@ void		check_cost(t_stacks *stacks, int i);
 void		move_stack_a(t_stacks *stacks);
 int			find_index_stack_a(t_stacks *stacks, int nbr);
 int			search_num_stack_a(t_stacks *stacks, int nbr);
+void		put_in_order(t_stacks *stacks);
 void		new_min_stack_a(t_stacks *stacks);
 void		new_max_stack_a(t_stacks *stacks);
 void		new_elem_stack_a(t_stacks *stacks, t_stack_b *head_b);
 void		do_moves_min_stack_a(t_stacks *stacks);
 void		do_moves_max_stack_a(t_stacks *stacks);
 void		do_moves_elem_stack_a(t_stacks *stacks);
+void		do_moves_order(t_stacks *stacks);
 
 // Check Max & Min B
 void		check_max_min_b(t_stacks *stacks);

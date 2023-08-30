@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 16:22:48 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:25:38 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ void	sorting(t_stacks *stacks)
 		sort_three(stacks, 1);
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
-	print_linked_lists(stacks);
 	move_cheapest(stacks);
 	sort_three(stacks, 0);
-	print_linked_lists(stacks);
+	// print_linked_lists(stacks);
 	move_stack_a(stacks);
-	print_linked_lists(stacks);
+	// print_linked_lists(stacks);
 }
 
 
@@ -53,4 +52,4 @@ void	print_linked_lists(t_stacks *stacks)
 		count++;
 	}
 	ft_printf("\n");
-}
+} 

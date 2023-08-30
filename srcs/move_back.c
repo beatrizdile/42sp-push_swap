@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 16:54:28 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:10:15 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,55 @@
 
 void	move_stack_a(t_stacks *stacks)
 {
-	t_stack_b	*head_b;
-	// int			size;
-	// int			i;
-	
-	// i = 0;
-	// size = ft_listsize_b(stacks->head_b);
-	head_b = stacks->head_b;
-	// while (i++ < size)
-	// {
+	while (stacks->head_b != NULL)
+	{
 		check_max_min_a(stacks);
-		if (head_b->content < stacks->values->min_a)
+		if (stacks->head_b->content < stacks->values->min_a)
 			new_min_stack_a(stacks);
-		else if (head_b->content > stacks->values->max_a)
+		else if (stacks->head_b->content > stacks->values->max_a)
 			new_max_stack_a(stacks);
 		else
-			new_elem_stack_a(stacks, head_b);
-		head_b = head_b->next;
-	// }
+			new_elem_stack_a(stacks, stacks->head_b);
+	}
+	check_max_min_a(stacks);
+	put_in_order(stacks);
+}
+
+void	put_in_order(t_stacks *stacks)
+{
+	int	i;
+	int	size;
+
+	stacks->moves->ra = 0;
+	stacks->moves->rra = 0;
+	if (stacks->head_a->content != stacks->values->min_a)
+	{
+		i = find_index_stack_a(stacks, stacks->values->min_a);
+		size = ft_listsize_a(stacks->head_a);
+		if (size % 2 == 0)
+		{
+			if (i+1 > size/2)
+				stacks->moves->rra = (size - i);
+			else
+				stacks->moves->ra = i;
+		}
+		else
+		{
+			if (i > size/2)
+				stacks->moves->rra = (size - i);
+			else
+				stacks->moves->ra = i;
+		}
+	}
+	do_moves_order(stacks);
+}
+
+void	do_moves_order(t_stacks *stacks)
+{
+	while (stacks->moves->ra-- != 0)
+		ft_rotate(stacks, 'a');
+	while (stacks->moves->rra-- != 0)
+		ft_rev_rotate(stacks, 'a');
 }
 
 int	find_index_stack_a(t_stacks *stacks, int nbr)
@@ -52,11 +83,3 @@ int	find_index_stack_a(t_stacks *stacks, int nbr)
 	}
 	return (i);
 }
-
-// verificar se o primeiro valor da stack b vai ser passado para a posição correta
-// se o valor a ser passado for menor que o MIN da stack A
-//		posicione o menor valor da stack A no topo, e push A
-// se o valor a ser passado for maior que o MAX da stack A
-//		posicione o maior valor da stack A no sopé, e push A & rotate A
-// senão, posicione o primeiro valor maior que o valor a ser passado no topo da stack A & push
-// organizar a stack A em ordem crescente
