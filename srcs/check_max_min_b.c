@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_max_min.c                                    :+:      :+:    :+:   */
+/*   check_max_min_b.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 13:43:07 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/29 15:21:00 by bedos-sa         ###   ########.fr       */
+/*   Created: 2023/08/30 13:20:22 by bedos-sa          #+#    #+#             */
+/*   Updated: 2023/08/30 13:20:25 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_max_min(t_stacks *stacks)
+void	check_max_min_b(t_stacks *stacks)
 {
 	if (stacks->head_b != NULL)
 	{

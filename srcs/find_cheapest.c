@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 12:14:47 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 14:10:01 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	move_cheapest(t_stacks *stacks)
 	stacks->values = values;
 	while (ft_listsize_a(stacks->head_a) != 3)
 	{
-		check_max_min(stacks);
+		check_max_min_b(stacks);
 		check_moves(stacks);
 		do_cheap_moves(stacks);
 	}

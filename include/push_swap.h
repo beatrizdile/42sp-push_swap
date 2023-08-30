@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 12:11:41 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/30 14:26:32 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void		identify_nums(t_stacks *stacks, int num1, int num2, int num3);
 
 // Sort
 void		sorting(t_stacks *stacks);
+void		move_stack_a(t_stacks *stacks);
 
 // Moves Push
 void		ft_push(t_stacks *stacks, char ch);
@@ -141,10 +142,21 @@ int			search_num_stack_b(t_stacks *stacks, int nbr);
 void		check_double_moves(t_stacks *stacks);
 void		check_cost(t_stacks *stacks, int i);
 
-// Check Max & Min
-void		check_max_min(t_stacks *stacks);
+// Move Back to Stack A
+void		move_stack_a(t_stacks *stacks);
+void		new_min_stack_a(t_stacks *stacks);
+int			find_index_stack_a(t_stacks *stacks, int nbr);
+void		do_moves_stack_a(t_stacks *stacks);
+
+// Check Max & Min B
+void		check_max_min_b(t_stacks *stacks);
 void		check_max_b(t_stacks *stacks, t_stack_b *head_b);
 void		check_min_b(t_stacks *stacks, t_stack_b *head_b);
+
+// Check Max & Min A
+void		check_max_min_a(t_stacks *stacks);
+void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
+void		check_min_a(t_stacks *stacks, t_stack_a *head_a);
 
 // Print
 void		print_linked_lists(t_stacks *stacks);
