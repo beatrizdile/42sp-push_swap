@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/31 12:06:22 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:04:51 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ void	sorting(t_stacks *stacks)
 		return ;
 	if (ft_listsize_a(stacks->head_a) == 3)
 		sort_three(stacks, 1);
+	if (ft_listsize_a(stacks->head_a) == 2)
+		sort_two(stacks);
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
 	move_cheapest(stacks);
 	sort_three(stacks, 0);
 	move_stack_a(stacks);
-	print_linked_lists(stacks);
+	// print_linked_lists(stacks);
 }
 
 

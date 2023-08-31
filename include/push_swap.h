@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 17:11:08 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:57:38 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,10 @@ t_stack_b	*ft_newnode_b(int content);
 void		ft_clearnodes_b(t_stack_b **lst);
 int			ft_listsize_b(t_stack_b *head);
 
-// Sort Three
+// Sort Three & Two
 void		sort_three(t_stacks *stacks, int flag);
-void		identify_nums(t_stacks *stacks, int num1, int num2, int num3);
+void		sort_two(t_stacks *stacks);
+void		identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
 
 // Sort
 void		sorting(t_stacks *stacks);
