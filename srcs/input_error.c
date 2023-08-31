@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:19:18 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/22 12:36:53 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 08:43:46 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,8 @@ void	check_for_doubles(t_stack_a *head_a)
 {
 	t_stack_a	*tmp;
 	t_stack_a	*ptr;
-	int			i;
 	int			num;
 
-	i = 0;
 	ptr = head_a;
 	while (ptr != NULL)
 	{

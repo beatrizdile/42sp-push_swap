@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:40:17 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 11:17:42 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 08:44:11 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	ft_push(t_stacks *stacks, char ch)
 {
-	t_stack_a	*head_a;
 	t_stack_b	*head_b;
 
-	head_a = stacks->head_a;
 	head_b = stacks->head_b;
 	if (ch == 'a')
 	{
