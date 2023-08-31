@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:34:22 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/23 11:32:14 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:41:22 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print)
 	head_b->next = tmp_head;
 	tmp_head->next = NULL;
 	if (print != 0)
-		ft_printf("ra\n");
+		ft_printf("rb\n");
 }
 
 t_stack_a	*ft_listlast_a(t_stack_a *head_a)
