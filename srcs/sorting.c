@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/31 15:07:55 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:07:58 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	sorting(t_stacks *stacks)
 {
-
 	if (check_list_order(stacks))
 		return ;
 	if (ft_listsize_a(stacks->head_a) == 3)

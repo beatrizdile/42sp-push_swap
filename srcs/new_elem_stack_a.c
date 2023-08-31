@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:15:50 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 16:31:40 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:13:53 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@ void	new_elem_stack_a(t_stacks *stacks, t_stack_b *head_b)
 
 	stacks->moves->ra = 0;
 	stacks->moves->rra = 0;
-	if (stacks->head_a->content != search_num_stack_a(stacks, head_b->content))
+	if (stacks->head_a->content != search_stack_a(stacks, head_b->content))
 	{
-		i = find_index_stack_a(stacks, search_num_stack_a(stacks, head_b->content));
+		i = find_index_stack_a(stacks, search_stack_a(stacks, head_b->content));
 		size = ft_listsize_a(stacks->head_a);
 		if (size % 2 == 0)
 		{
-			if (i+1 > size/2)
+			if (i + 1 > size / 2)
 				stacks->moves->rra = (size - i);
 			else
 				stacks->moves->ra = i;
 		}
 		else
 		{
-			if (i > size/2)
+			if (i > size / 2)
 				stacks->moves->rra = (size - i);
 			else
 				stacks->moves->ra = i;
@@ -40,6 +40,7 @@ void	new_elem_stack_a(t_stacks *stacks, t_stack_b *head_b)
 	}
 	do_moves_elem_stack_a(stacks);
 }
+
 void	do_moves_elem_stack_a(t_stacks *stacks)
 {
 	while (stacks->moves->ra-- != 0)
@@ -49,7 +50,7 @@ void	do_moves_elem_stack_a(t_stacks *stacks)
 	ft_push(stacks, 'a');
 }
 
-int	search_num_stack_a(t_stacks *stacks, int nbr)
+int	search_stack_a(t_stacks *stacks, int nbr)
 {
 	t_stack_a	*head_a;
 	int			size;

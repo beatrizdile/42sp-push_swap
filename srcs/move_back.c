@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 17:10:15 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:12:48 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void	put_in_order(t_stacks *stacks)
 		size = ft_listsize_a(stacks->head_a);
 		if (size % 2 == 0)
 		{
-			if (i+1 > size/2)
+			if (i + 1 > size / 2)
 				stacks->moves->rra = (size - i);
 			else
 				stacks->moves->ra = i;
 		}
 		else
 		{
-			if (i > size/2)
+			if (i > size / 2)
 				stacks->moves->rra = (size - i);
 			else
 				stacks->moves->ra = i;
@@ -77,7 +77,7 @@ int	find_index_stack_a(t_stacks *stacks, int nbr)
 	while (i < size)
 	{
 		if (head_a->content == nbr)
-			break;
+			break ;
 		head_a = head_a->next;
 		i++;
 	}

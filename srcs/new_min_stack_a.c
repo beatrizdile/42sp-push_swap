@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:44:31 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 16:37:12 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:13:09 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	new_min_stack_a(t_stacks *stacks)
 {
-	int			i;
-	int			size;
+	int	i;
+	int	size;
 
 	stacks->moves->ra = 0;
 	stacks->moves->rra = 0;
@@ -25,14 +25,14 @@ void	new_min_stack_a(t_stacks *stacks)
 		size = ft_listsize_a(stacks->head_a);
 		if (size % 2 == 0)
 		{
-			if (i+1 > size/2)
+			if (i + 1 > size / 2)
 				stacks->moves->rra = (size - i);
 			else
 				stacks->moves->ra = i;
 		}
 		else
 		{
-			if (i > size/2)
+			if (i > size / 2)
 				stacks->moves->rra = (size - i);
 			else
 				stacks->moves->ra = i;

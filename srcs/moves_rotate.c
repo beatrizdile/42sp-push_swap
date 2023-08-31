@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:34:22 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/31 14:41:22 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:13:36 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_rotate_a(t_stacks *stacks, t_stack_a *head_a, int print)
 
 	tmp_head = head_a;
 	stacks->head_a = head_a->next;
-	while(head_a->next != NULL)
+	while (head_a->next != NULL)
 		head_a = head_a->next;
 	head_a->next = tmp_head;
 	tmp_head->next = NULL;
@@ -58,7 +58,7 @@ void	ft_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print)
 
 	tmp_head = head_b;
 	stacks->head_b = head_b->next;
-	while(head_b->next != NULL)
+	while (head_b->next != NULL)
 		head_b = head_b->next;
 	head_b->next = tmp_head;
 	tmp_head->next = NULL;
@@ -67,7 +67,7 @@ void	ft_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print)
 }
 
 t_stack_a	*ft_listlast_a(t_stack_a *head_a)
-{	
+{
 	if (head_a == NULL)
 		return (NULL);
 	while (head_a->next != NULL)
@@ -75,9 +75,8 @@ t_stack_a	*ft_listlast_a(t_stack_a *head_a)
 	return (head_a);
 }
 
-
 t_stack_b	*ft_listlast_b(t_stack_b *head_b)
-{	
+{
 	if (head_b == NULL)
 		return (NULL);
 	while (head_b->next != NULL)

@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:20:22 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 13:20:25 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:11:58 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_min_b(t_stacks *stacks, t_stack_b *head_b)
 {
 	int	i;
 	int	size;
-	
+
 	i = 0;
 	size = ft_listsize_b(head_b);
 	stacks->values->min_b = head_b->content;
@@ -42,7 +42,7 @@ void	check_max_b(t_stacks *stacks, t_stack_b *head_b)
 {
 	int	i;
 	int	size;
-	
+
 	i = 0;
 	size = ft_listsize_b(head_b);
 	stacks->values->max_b = head_b->content;

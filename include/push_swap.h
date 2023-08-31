@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/31 15:08:16 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:11:03 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ void		check_cost(t_stacks *stacks, int i);
 // Move Back to Stack A
 void		move_stack_a(t_stacks *stacks);
 int			find_index_stack_a(t_stacks *stacks, int nbr);
-int			search_num_stack_a(t_stacks *stacks, int nbr);
+int			search_stack_a(t_stacks *stacks, int nbr);
 void		put_in_order(t_stacks *stacks);
 void		new_min_stack_a(t_stacks *stacks);
 void		new_max_stack_a(t_stacks *stacks);
