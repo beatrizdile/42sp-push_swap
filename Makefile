@@ -6,7 +6,7 @@
 #    By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 10:33:46 by bedos-sa          #+#    #+#              #
-#    Updated: 2023/08/31 13:59:15 by bedos-sa         ###   ########.fr        #
+#    Updated: 2023/09/01 18:51:47 by bedos-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,11 +30,13 @@ FILES = srcs/push_swap.c \
 		srcs/find_cheapest.c \
 		srcs/check_max_min_b.c \
 		srcs/check_max_min_a.c \
+		srcs/checks_cheapest.c \
 		srcs/free_all.c \
 		srcs/move_back.c \
 		srcs/new_min_stack_a.c \
 		srcs/new_max_stack_a.c \
 		srcs/new_elem_stack_a.c \
+		srcs/new_in_stack_b.c \
 		srcs/sort_two.c
 OBJS = $(FILES:.c=.o)
 green = \033[32m
