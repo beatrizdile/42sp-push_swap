@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 15:25:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/09/02 16:20:34 by bedos-sa         ###   ########.fr       */
+/*   Created: 2023/09/02 16:19:43 by bedos-sa          #+#    #+#             */
+/*   Updated: 2023/09/02 16:51:38 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	sort_four(t_stacks *stacks)
 {
-	t_stacks	stacks;
+	struct t_moves	*moves;
+	struct t_cheap	*cheap;
+	t_values		*values;
 
-	input_error(argc, argv);
-	stacks.head_a = create_list_a(argc, argv);
-	stacks.head_b = NULL;
-	check_for_doubles(stacks.head_a);
-	sorting(&stacks);
-	free_for_all(&stacks);
+	moves = ft_calloc(1, sizeof(t_moves));
+	stacks->moves = moves;
+	cheap = ft_calloc(1, sizeof(t_cheap));
+	stacks->cheap = cheap;
+	values = ft_calloc(1, sizeof(t_values));
+	stacks->values = values;
+
+	ft_push(stacks, 'b');
+	sort_three(stacks, 0);
+	move_stack_a(stacks);
+	free_for_all(stacks);
+	exit(0);
 }
