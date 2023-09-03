@@ -6,13 +6,13 @@
 #    By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/31 11:45:32 by cado-car          #+#    #+#              #
-#    Updated: 2023/08/17 11:37:32 by bedos-sa         ###   ########.fr        #
+#    Updated: 2023/09/02 23:06:24 by bedos-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a 
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g3 -I../include
+CFLAGS		= -Wall -Wextra -Werror -O3 -g3 -I../include
 LIB			= ar -rcs
 SRCS		= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 			ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \

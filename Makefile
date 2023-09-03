@@ -6,7 +6,7 @@
 #    By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 10:33:46 by bedos-sa          #+#    #+#              #
-#    Updated: 2023/09/02 16:27:56 by bedos-sa         ###   ########.fr        #
+#    Updated: 2023/09/02 22:14:06 by bedos-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,15 @@ FILES = push_swap.c \
 		new_elem_stack_a.c \
 		new_in_stack_b.c
 
-FILES_BONUS = checker.c
+FILES_BONUS = checker_bonus.c \
+			  input_error_bonus.c \
+			  linked_list_a_bonus.c \
+			  free_all_bonus.c \
+			  linked_list_b_bonus.c \
+			  moves_push_bonus.c \
+			  moves_rev_rotate_bonus.c \
+			  moves_rotate_bonus.c \
+			  moves_swap_bonus.c
 OBJ_DIR = build
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))

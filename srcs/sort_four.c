@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:19:43 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/09/02 16:51:38 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/09/02 23:15:03 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	sort_four(t_stacks *stacks)
 	stacks->cheap = cheap;
 	values = ft_calloc(1, sizeof(t_values));
 	stacks->values = values;
-
 	ft_push(stacks, 'b');
 	sort_three(stacks, 0);
 	move_stack_a(stacks);
