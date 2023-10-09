@@ -6,7 +6,7 @@
 </h2>
 <h2 align=center>
 
-  ![push_swap Logo](https://github.com/caroldaniel/caroldaniel-utils/blob/6b25474bf78299bc7cded8a9c423eebf35fb1d75/push_swapm.png)
+  ![push_swap Logo](https://github.com/beatrizdile/beatrizdile-utils/blob/master/push_swapm.png)
 </h2>
 
 Push_swap is a sorting algorithm project that aims to sort a stack of integers using a limited set of operations while minimizing the number of moves. The goal is to implement two programs: one that checks if a given list of instructions sorts the stack, and another that generates the list of instructions to sort the stack.
