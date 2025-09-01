@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fnicolau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2025/08/24 13:47:51 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/01 13:39:33 by fnicolau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 # define INTMAX 2147483647
 # define INTMIN -2147483648
-# define STR_SIZE_INTMIN 11
 
 typedef struct t_stack_a
 {

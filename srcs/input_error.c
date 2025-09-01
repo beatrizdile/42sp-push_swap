@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fnicolau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:19:18 by bedos-sa          #+#    #+#             */
-/*   Updated: 2025/08/24 13:48:11 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/01 14:21:47 by fnicolau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,8 @@ void	check_int_size(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (ft_strlen(argv[i]) > STR_SIZE_INTMIN)
-			print_error_and_exit();
-		num = ft_atol(argv[i]);
-		if (num > INTMAX || num < INTMIN)
+		num = custom_atol(argv[i]);
+		if (num == LONG_MAX)
 			print_error_and_exit();
 		i++;
 	}
